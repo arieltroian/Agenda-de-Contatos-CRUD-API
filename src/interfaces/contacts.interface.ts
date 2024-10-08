@@ -12,7 +12,7 @@ export interface ContactCreate {
   name: string;
   email: string;
   phone: string;
-  userEmail: string;
+  userEmail: any;
 }
 
 export interface ContactCreateData {

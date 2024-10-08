@@ -25,14 +25,14 @@ class ContactUseCase {
     const user = await this.userRepository.findByEmail(userEmail);
 
     if (!user) {
-      throw new Error("User not found");
+      throw new Error("Usuário não encontrado");
     }
 
     const verifyIfExistsContact =
       await this.contactRepository.findByEmailOrPhone(email, phone);
 
     if (verifyIfExistsContact) {
-      throw new Error("Contact already exists");
+      throw new Error("O contato já existe");
     }
 
     const contact = await this.contactRepository.create({
@@ -44,11 +44,11 @@ class ContactUseCase {
     return contact;
   }
 
-  async listAllContacts(userEmail: string) {
+  async listAllContacts(userEmail: any) {
     const user = await this.userRepository.findByEmail(userEmail);
 
     if (!user) {
-      throw new Error("User not found");
+      throw new Error("Usuário não encontrado");
     }
 
     const contacts = await this.contactRepository.findAllContacts(user.id);
