@@ -28,7 +28,6 @@ app.register(fastifySwaggerUi, {
     docExpansion: "full", // Exibe a documentação expandida
     deepLinking: false, // Desabilita links profundos
   },
-  exposeRoute: true,
 });
 
 // Registro das rotas
